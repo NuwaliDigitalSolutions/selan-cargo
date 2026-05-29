@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Dynamic Theme Variable Definitions */
+:root {
+  /* --- LIGHT MODE CONSOLE THEME --- */
+  --slate-50: #FFFFFF;         /* Crisp pure white */
+  --slate-100: #F8FAFC;        /* Subtle pale gray window canvas */
+  --slate-200: #D1D5DB;        /* High density defined dividers */
+  --slate-300: #E2E8F0;
+  --slate-400: #64748B;        /* Muted captions */
+  --slate-500: #475569;        /* Secondary typography text */
+  --slate-700: #E2E8F0;        /* Subtle line guides */
+  --slate-800: #F1F5F9;        /* Warm light header/footer sections */
+  --slate-900: #FFFFFF;        /* Bright sidebar area background */
+  
+  --text-primary: #1E293B;     /* Slate-800 for high-density reading */
+  --text-headings: #0F172A;    /* Slate-900 for solid headers */
+  --text-secondary: #475569;   /* Slate-600 */
+  
+  --input-bg: #FFFFFF;
+  --input-border: #D1D5DB;
+}
+
+.dark {
+  /* --- DARK SYSTEM CONSOLE THEME (Original Cyber look) --- */
+  --slate-50: #111216;         /* Dense obsidian black */
+  --slate-100: #0A0B0D;        /* Pitch black background */
+  --slate-200: #2D2E32;        /* Defined border lines */
+  --slate-300: #7b8491;
+  --slate-400: #9CA3AF;        /* Mid-gray labels */
+  --slate-500: #6B7280;        /* Inactive selectors */
+  --slate-700: #2D2E32;        /* Intermediate lines */
+  --slate-800: #141518;        /* System pane background cards */
+  --slate-900: #0E0F12;        /* Dark sidebar container */
+  
+  --text-primary: #D1D5DB;     /* White/Gray readability */
+  --text-headings: #F3F4F6;    /* Bright silver text */
+  --text-secondary: #9CA3AF;   /* Charcoal gray */
+  
+  --input-bg: #1A1C20;
+  --input-border: #2D2E32;
+}
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Map standard neutral slate class bindings to dynamic CSS variables */
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-400: var(--slate-400);
+  --color-slate-500: var(--slate-500);
+  --color-slate-700: var(--slate-700);
+  --color-slate-800: var(--slate-800);
+  --color-slate-900: var(--slate-900);
+}
+
+/* Base Body System Setup */
+body {
+  background-color: var(--slate-100) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Force dark overlay class changes if necessary */
+.bg-slate-100 {
+  background-color: var(--slate-100) !important;
+}
+.bg-slate-50 {
+  background-color: var(--slate-50) !important;
+}
+.bg-slate-800 {
+  background-color: var(--slate-800) !important;
+}
+.bg-slate-900 {
+  background-color: var(--slate-900) !important;
+}
+.bg-white {
+  background-color: var(--slate-50) !important;
+}
+
+.border-slate-200, 
+.border-slate-700, 
+.border-slate-800,
+.border-slate-150,
+.border-slate-250,
+.border-slate-300 {
+  border-color: var(--slate-200) !important;
+}
+
+.text-slate-900,
+.text-slate-800,
+.text-slate-950,
+.text-gray-900 {
+  color: var(--text-headings) !important;
+}
+
+.text-slate-100,
+.text-slate-200,
+.text-slate-300,
+.text-slate-350 {
+  color: var(--text-primary) !important;
+}
+
+.text-slate-400,
+.text-slate-500,
+.text-slate-605,
+.text-slate-650,
+.text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+/* Style Inputs to adjust with theme definitions */
+input, select, textarea {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--text-headings) !important;
+  font-family: var(--font-mono) !important;
+  border-radius: 4px !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 11.5px !important;
+  transition: all 0.15s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 1px solid #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Buttons visual polish style */
+.btn {
+  border-radius: 4px !important;
+  font-family: var(--font-mono) !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+  transition: all 0.1s ease-in-out !important;
+}
+
+/* Custom interactive styles for high-density lists card viewports */
+.hover\:bg-slate-50\/50:hover,
+.hover\:bg-slate-50\/60:hover {
+  background-color: var(--slate-800) !important;
+}
+
+/* Ensure full scrollbar integration matches the active style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--slate-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-200);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}

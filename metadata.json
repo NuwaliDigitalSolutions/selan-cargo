@@ -1,0 +1,6 @@
+{
+  "name": "Sea Cargo Japan - Sri Lanka",
+  "description": "A complete dashboard and management applet for handling declarations, packing lists, freight invoicing, and tracking stickers for Japan to Sri Lanka sea cargo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
